@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBetting Website</title>
+    <link  rel="stylesheet" type="text/css" href="css/style.css"> 
+    
+</head>
+<body id="home">
+<header id="main-header">
+    <div class="container">
+        <h1>AlphaBet.com</h1>
+    </div>
+    
+</header>  
+<nav id="navbar">
+    <div class="container">
+        <ul>
+            <!-- <li><a href="#">Home</a> </li> -->
+            <button class="show-modal" id="showAccount">Account</button>
+            <button class="show-modal" id="showResults">Results</button>
+            <li><a href="./About.html">About</a> </li>
+            <li><a href="./Help.html">Help</a> </li>
+            <li><a href="./signUp.html">Sign up</a> </li>
+        </ul>
+    </div>
+</nav> 
+
+<section id="showcase">
+   
+    
+    <div class="container">
+      
+        <h1>Welcome to AplhaBet.com</h1>
+        <div id="text-overlay"><p1 style="color:#fff;">Below is list of randomly generated matches. You can choose what team you think will win or whether the outcome will be a draw by clicking on the button that corresponds to your choice. </p1></div>
+    </div>
+</section>
+
+<div class="modal hidden" id="accountModal">
+    <button class="close-modal">&times;</button>
+    <h1>Account</h1>
+    <section class="userInfo">
+        <div id="profilePicture">
+            <img id ="avatar" src="./images/user_balance-512.png" alt text="profilepicture">
+           
+        </div>
+        <div id="userName">
+            <h>username</h>
+            <div><input id="user-name" placeholder="Username" name="user_name"></input></div>
+        </div>
+        <div id="money">
+            <h>Amount available</h>
+            <div><input id="amountAvailable" placeholder="Your Money" name="amountAvailable"></input></div>
+            
+        
+            <!-- <Button id="deposit">Deposit</Button>
+            <Button id="withdraw">Withdraw</Button> -->
+        
+            
+        </div>
+        <!-- <div><input id= "amoun t" type="number" placeholder="Enter amount" name="amount" required></div>
+        <div><Button id="confir m">confirm</Button></div> -->
+        
+        
+    </section>
+   
+</div>
+
+<div class="modal hidden" id="resultsModal">
+    <button class="closeResultsModal">&times;</button>
+    <h1>Results</h1>
+   
+        <div class="container" id="results-section">
+        <div>
+            <div id="bet-results">
+                <h>Your Matches</h>
+                <p id="defaultText1" class="defaultText">Bet results will appear here after you place a bet</p>
+                    <table class ="hidden" id="selectedMatches">
+                        <tr>
+                        <th>You picked</th>
+                        
+                        <th>Bet result</th>
+                        </tr>
+                    </table>
+            </div>
+            
+            <div id="all-results">
+                <h>All Matches</h>
+                <p id="defaultText2" class="defaultText">Match results will appear here after you place a bet</p>
+                <table class ="hidden" id="allMatches">
+                    <tr>
+                    <th>Match</th>
+                    <th>Result</th>
+                    </tr>
+                    
+
+                </table>
+            </div>
+        </div>  
+            
+        <div >
+            <div id="amountWon">
+            <h>Amount Won</h> 
+            <p id="showAmountWon">0.00</p>
+            </div>
+            <div>
+                <Button id="playAgain" class="hidden">Play Again</Button>
+            </div>
+            
+            
+        </div>
+        
+        </div>
+        
+    <!-- </section> -->
+   
+</div>
+<div id="overlay"></div>
+
+<section id ="matches">
+    <div class = "container">
+        <div class="div-container">
+            <div class="box">
+                <div class="amountSection">
+                    <p style="margin-bottom: 5px;"><Strong>How much do you want to place per bet?</Strong></p>
+                    <input id= "betAmount" type="number" placeholder="Enter amount" name="amount" required></input>
+                </div>
+                
+                
+                <div class ="items">
+                    <li><div class="grid-container">
+                    <div class="grid-item"><h id="team0">Liverpool</h></div>
+                    <div class="grid-item"><h id="draw1">Draw</h></div>
+                    <div class="grid-item"><h id="team1">Everton</h></div> 
+                    <div class="grid-item"><button id="odd0"> 0.0</button></div>
+                    <div class="grid-item"><button id="odd1"> 0.0</button></div>
+                    <div class="grid-item"><button id="odd2"> 0.0</button></div>
+                    </div></li>
+                    <li><div class="grid-container">
+                    <div class="grid-item"><h id="team2">Liverpool</h></div>
+                    <div class="grid-item"><h id="draw2">Draw</h></div>
+                    <div class="grid-item"><h id="team3">Everton</h></div> 
+                    <div class="grid-item"><button id="odd3"> 0.0</button></div>
+                    <div class="grid-item"><button id="odd4"> 0.0</button></div>
+                    <div class="grid-item"><button id="odd5"> 0.0</button></div>
+                    </div></li>
+                    <li><div class="grid-container">
+                    <div class="grid-item"><h id="team4">Liverpool</h></div>
+                    <div class="grid-item"><h id="draw3">Draw</h></div>
+                    <div class="grid-item"><h id="team5">Everton</h></div> 
+                    <div class="grid-item"><button id="odd6"> 0.0</button></div>
+                    <div class="grid-item"><button id="odd7"> 0.0</button></div>
+                    <div class="grid-item"><button id="odd8"> 0.0</button></div>
+                    </div></li>
+                    <li><div class="grid-container">
+                    <div class="grid-item"><h id="team6">Liverpool</h></div>
+                    <div class="grid-item"><h id="draw4">Draw</h></div>
+                    <div class="grid-item"><h id="team7">Everton</h></div> 
+                    <div class="grid-item"><button id="odd9"> 0.0</button></div>
+                    <div class="grid-item"><button id="odd10"> 0.0</button></div>
+                    <div class="grid-item"><button id="odd11"> 0.0</button></div>
+                    </div></li>
+                    <li><div class="grid-container">
+                    <div class="grid-item"><h id="team8">Liverpool</h></div>
+                    <div class="grid-item"><h id="draw5">Draw</h></div>
+                    <div class="grid-item"><h id="team9">Everton</h></div> 
+                    <div class="grid-item"><button id="odd12"> 0.0</button></div>
+                    <div class="grid-item"><button id="odd13"> 0.0</button></div>
+                    <div class="grid-item"><button id="odd14"> 0.0</button></div>
+                    </div></li>   
+                </div>   
+                  
+            </div>  
+            
+            <div id="betSection">
+            <div id ="betSlip">
+                <h4>Bet slip</h4>
+                <table id="betslip" >
+                    <tr>
+                    <th>Team</th>
+                    <th>Odds</th>
+                    <th>Possible Win</th>
+                    </tr>
+                    <!-- <tr>
+                        <td id="teamName"></td>
+                        <td id="odd"></td>
+                        <td id="possibleWin"></td>
+                    </tr> -->
+
+                </table>
+            </div> 
+            <div id="totalPossibleWin">
+                <p><strong>Possible win total:</strong></p>
+                <p id="showTotalPossibleWin">Ksh.0.00</p>
+            </div> 
+            <div class="matchBtns">
+                    
+                <button id="placeSingleBet">Place Bet</button>
+                <!-- <button id="placeMultiBet">Place Multi Bet</button> -->
+                <button id="kickOff">Kick off</button>
+                
+            </div>
+            </div> 
+            <div id="racing-section">
+             <div id="startLine1">
+            <div id ="startLine2">
+            <div id ="pictures-section">
+               
+                <div class="picture-grid">
+                    <div class="upper-team"><img  id="img0"src="./images/Liverpool.png"></div>
+                    <div class="lower-team"><img  id="img1" src="./images/Arsenal.png"></div>
+                </div>
+                <div class="picture-grid">
+                    <div class="upper-team"><img  id="img2"src="./images/Watford.png"></div>
+                    <div class="lower-team"><img  id="img3"src="./images/Everton.png"></div>
+                </div>
+                <div class="picture-grid">
+                    <div class="upper-team"><img  id="img4" src="./images/Chelsea.png"></div>
+                    <div class="lower-team"><img  id="img5"src="./images/Manchester City.png"></div>
+                </div>
+                <div class="picture-grid">
+                    <div class="upper-team"><img  id="img6"src="./images/Manchester United.png"></div>
+                    <div class="lower-team"><img  id="img7"src="./images/Southampton.png"></div>
+                </div> 
+                <div id ="lastcolumn"class="picture-grid">
+                    <div class="upper-team"><img  id="img8"src="./images/Westham.png"></div>
+                    <div class="lower-team"><img  id="img9"src="./images/Tottenham1.png"></div>
+                </div>
+               
+            </div> 
+            </div>
+             </div>
+            </div>
+        
+
+
+          
+    
+</section>
+       
+<section>      
+    <footer id="main-footer">
+        <p>Copyright &copy; 2022 </p>
+    </footer>
+</section>
+<script src="script/script.js"></script>
+</body>
+</html> 
